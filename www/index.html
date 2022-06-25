@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/navbar-fixed-top.css">
+        <title>SQLite Example</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#sqliteclick"><span class="glyphicon glyphicon-menu-hamburger"></span>SQLite - Lab7 - Task2</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="well" id="divStudentList" style="display:none">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-condensed table-striped table-hover" id="tblStudent">
+                            <thead>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <a class="btn btn-primary btn-lg" href='#viewstudent/id'><span class="glyphicon glyphicon-plus"></span></a>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well" id="divFrmShowStudent" style="display:none">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form id="frmShowStudent">
+                            <fieldset>
+                                <div class="col-lg-8 col-lg-offset-4">
+                                    <h3>Student Details</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label for="studentId" class="col-lg-4 control-label">Student Id</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentidshow" class="form-cotrol" placeholder="Student ID" readonly />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name" class="col-lg-4 control-label">Name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentnameshow" class="form-control" placeholder="Student Name" readonly />
+                                    </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="Phone Number" class="col-lg-4 control-label">Phone Number</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentphoneshow" class="form-control" placeholder="Student Phone" readonly />
+                                    </div> 
+                                </div>
+                                <div class="form-group text-right">
+                                    <div class="col-lg-8 col-lg-offset-4">
+                                        <a class="btn btn-primary btn-lg" href="#editBtn" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class="btn btn-primary btn-lg" href="#delBtn" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well" id="divFrmInputStudent" style="display:none">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form id="frmInputStudent">
+                            <fieldset>
+                                <div class="col-lg-8 col-lg-offset-4">
+                                    <h3>Input new student</h3>
+                                </div>
+                                
+                                    <label for="studentId" class="col-lg-4 control-label">Student Id</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentidshow" class="form-cotrol" placeholder="Student ID" required />
+                                    </div>
+                                
+                                <div class="form-group">
+                                    <label for="Name" class="col-lg-4 control-label">Name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentnameinput" class="form-control" placeholder="Student Name" required />
+                                    </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="Phone Number" class="col-lg-4 control-label">Phone Number</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentphoneinput" class="form-control" placeholder="Student Phone" required />
+                                    </div> 
+                                </div>
+
+                                <div class="form-group text-right">
+                                    <a class="btn btn-primary btn-lg" href="#btnSubmit" role="button" type="submit"><span class="glyphicon glyphicon-save"></span></a>           
+                                    <a class="btn btn-primary btn-lg" href="#btnCancel" role="button" type="reset"><span class="glyphicon glyphicon-refresh"></span></a>     
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well" id="divFrmEditStudent" style="display:none">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form id="frmEditStudent">
+                            <fieldset>
+                                <div class="col-lg-8 col-lg-offset-4">
+                                    <h3>Edit Student</h3>
+                                </div>
+                                
+                                    <label for="studentId" class="col-lg-4 control-label">Student Id</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentidshow" class="form-cotrol" placeholder="Student ID" readonly />
+                                    </div>
+                               
+                                <div class="form-group">
+                                    <label for="Name" class="col-lg-4 control-label">Name</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentnameedit" class="form-control" placeholder="Student Name" required />
+                                    </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="Phone Number" class="col-lg-4 control-label">Phone Number</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="studentphoneedit" class="form-control" placeholder="Student Phone" required />
+                                    </div> 
+                                </div>
+                                <div class="form-group text-right">
+                                    <div class="col-lg-8 col-lg-offset-4">
+                                        <a class="btn btn-primary btn-lg" href="#btnSubmit" role="button" type="submit"><span class="glyphicon glyphicon-save"></span></a>           
+                                        <a class="btn btn-primary btn-lg" href="#btnCancel" role="button" type="reset"><span class="glyphicon glyphicon-refresh"></span></a> 
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        
+
+        <nav class="navbar navbar-fixed-bottom">
+            <div class="well text-right" id="divAddStdBtn" style="display:none">
+                <a class="btn btn-primary btn-lg" href="#btnAddStudent" role="button"><span class="glyphicon glyphicon-plus"></span></a>
+            </div>
+        </nav>
+
+        <script src="cordova.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/signals.min.js"></script>
+        <script src="js/hasher.min.js"></script>
+        <script src="js/crossroads.min.js"></script>
+        <!--script src="js/bootbox.min.js"></script-->
+        <script src="js/index.js"></script>
+    </body>
+</html>
